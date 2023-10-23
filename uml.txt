@@ -1,0 +1,22 @@
++----------------------------------+
+|             Hotel                |
++----------------------------------+
+| - id: INT (PK)                   |
+| - nombre: STRING                 |
+| - direccion: STRING              |
+| - ciudad: STRING                 |
+| - NIT: STRING                    |
+| - numeroHabitaciones: INT        |
++----------------------------------+
+| + tiposHabitacion()              |
++----------------------------------+
+
++----------------------------------+
+|        TipoHabitacion            |
++----------------------------------+
+| - id: INT (PK)                   |
+| - tipo: STRING                   |
+| - acomodacion: STRING            |
+| - cantidad: INT                  |
+| - hotel_id: INT (FK)             |
++----------------------------------+

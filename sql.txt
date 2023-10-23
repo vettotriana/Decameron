@@ -1,0 +1,22 @@
+-- Creación de la tabla Hotel
+CREATE TABLE Hotel (
+    id SERIAL PRIMARY KEY,
+    nombre VARCHAR(255) NOT NULL,
+    direccion VARCHAR(255) NOT NULL,
+    ciudad VARCHAR(255) NOT NULL,
+    NIT VARCHAR(50) UNIQUE NOT NULL,
+    numeroHabitaciones INT NOT NULL
+);
+
+-- Creación de la tabla TipoHabitacion
+CREATE TABLE TipoHabitacion (
+    id SERIAL PRIMARY KEY,
+    tipo VARCHAR(50) NOT NULL,
+    acomodacion VARCHAR(50) NOT NULL,
+    cantidad INT NOT NULL,
+    hotel_id INT REFERENCES Hotel(id)
+);
+
+-- Indices para mejorar la búsqueda
+CREATE INDEX idx_hotel_nombre ON Hotel(nombre);
+CREATE INDEX idx_tipohabitacion_tipo ON TipoHabitacion(tipo);
